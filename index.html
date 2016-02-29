@@ -1,0 +1,40 @@
+<html>
+<head>
+<style>
+	#container {
+		display: flex;
+	}
+	.img-card {
+		margin: 10px;
+		background-color: #DADADA;
+		transition: box-shadow 0.25s;
+		box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+	}
+	.img-card:hover {
+		box-shadow: 0 2px 5px 0 rgba(0,0,0,0.5),0 2px 10px 0 rgba(0,0,0,0.5);
+	}
+	.img-card img {
+	}
+
+</style>
+</head>
+<body>
+	<div id="container">
+	</div>
+	<script src="http://cdn.bootcss.com/jquery/2.2.1/jquery.js"></script>
+	<script type="text/javascript" src="image-flow.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function () {
+			imageFlow = new ImageFlow({
+				element: $('#container'),
+				rows: 3,
+				urls: ['http://localhost:8080/1.json',
+							 'http://localhost:8080/2.json',
+							 'http://localhost:8080/3.json',
+							 'http://localhost:8080/4.json']
+			});
+			console.log(imageFlow);
+		})
+	</script>
+</body>
+</html>
